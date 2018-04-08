@@ -63,6 +63,11 @@ class DrawerController: UIViewController, RootViewControllerDelegate {
         }) { (success) in
         }
     }
+    
+    func navigateTo(viewController: UIViewController) {
+        rootViewController.setViewControllers([viewController], animated: true)
+        self.toggleMenu()
+    }
 
     fileprivate func configureGestures() {
         let swipeLeftGesture = UISwipeGestureRecognizer(target: self, action: #selector(didSwipeLeft))
